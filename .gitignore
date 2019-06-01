@@ -110,3 +110,6 @@ venv.bak/
 *.sqlite
 import-config.ps1
 tmp
+
+# npz
+*.npz

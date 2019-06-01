@@ -7,7 +7,8 @@ def load_watermelon(version='4.0'):
     module_path = dirname(__file__)
 
     if version == '4.0':
-        return np.loadtxt(join(module_path, 'data', 'watermelon_4_0.txt'))
+        return np.loadtxt(join(
+            module_path, 'data', 'watermelon', 'watermelon_4_0.txt'))
     else:
         raise ValueError(
             'We have no such version watermelon dataset:', version)

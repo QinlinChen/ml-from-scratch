@@ -4,6 +4,7 @@ Its hierarchy is similar to the scikit-learn.
 
 Here are some algorithms that implemented:
 
+```
 mlfs --- cluster --- KMeans
       |           |- DBSCAN
       |           `- AgglomerativeClustering
@@ -12,4 +13,4 @@ mlfs --- cluster --- KMeans
       |
       `- ensemble --- AdaBoostClassifer
                    `- RandomForestClassifer
-
+```

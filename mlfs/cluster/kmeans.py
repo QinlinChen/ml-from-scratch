@@ -38,7 +38,7 @@ def _get_cluster_labels(centroids, X):
 
 
 def k_means(X, n_clusters=3, max_iter=500, tol=1e-4):
-    """Compute k-means clustering and return n_clusters centroids."""
+    """Compute k-means clustering and return n_clusters centroids and labels."""
     centroids = _init_random_centroids(X, n_clusters)
     for _ in range(max_iter):
         clusters = _create_clusters(centroids, X)

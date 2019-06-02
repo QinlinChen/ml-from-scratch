@@ -47,7 +47,15 @@ def encode_data(df_data, df_test):
 
 
 def load_adult():
-    """Load adult dataset."""
+    """Load adult dataset.
+
+    Returns
+    ----------
+    dataset : AdultDataset
+        Dataset is an object with fields X_train, y_train, X_test, y_test,
+        feature_names and target_names
+    """
+
     module_path = dirname(__file__)
     data_dir = join(module_path, 'data', 'adult')
     data_file = join(data_dir, 'adult.data')

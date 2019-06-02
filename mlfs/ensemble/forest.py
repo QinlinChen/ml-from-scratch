@@ -26,6 +26,7 @@ class RandomForestClassifier(object):
         self.n_estimators = n_estimators if n_estimators > 0 else 1
 
     def fit(self, X, y):
+        """Build a forest of trees from the training set (X, y)."""
         self.estimators_ = [DecisionTreeClassifier(max_features='log2')
                             for i in range(self.n_estimators)]
         for i in range(self.n_estimators):
@@ -33,6 +34,7 @@ class RandomForestClassifier(object):
         return self
 
     def predict(self, X):
+        """Predict class for X."""
         pred_mat = np.zeros((X.shape[0], self.n_estimators))
         for i in range(self.n_estimators):
             pred_mat[:, i] = self.estimators_[i].predict(X)
@@ -43,6 +45,7 @@ class RandomForestClassifier(object):
         return pred
 
     def predict_proba(self, X):
+        """Predict class probabilities for X."""
         prob_mat = np.zeros((X.shape[0], self.estimators_[0].n_classes_))
         for i in range(self.n_estimators):
             prob_mat += self.estimators_[i].predict_proba(X)

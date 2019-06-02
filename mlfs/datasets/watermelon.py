@@ -3,7 +3,14 @@ from os.path import dirname, join
 
 
 def load_watermelon(version='4.0'):
-    """Load watermelon dataset."""
+    """Load watermelon dataset.
+    
+    Returns
+    ----------
+    train_set : np.ndarray
+        data and labels for training
+    """
+
     module_path = dirname(__file__)
     data_dir = join(module_path, 'data', 'watermelon')
 

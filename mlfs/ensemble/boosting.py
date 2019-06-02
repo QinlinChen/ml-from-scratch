@@ -28,6 +28,7 @@ class AdaBoostClassifier(object):
         self.n_estimators = n_estimators if n_estimators > 0 else 1
 
     def fit(self, X, y):
+        """Build a boosted classifier from the training set (X, y)."""
         self.estimators_ = [DecisionTreeClassifier(max_depth=1)
                             for i in range(self.n_estimators)]
         self.alpha = np.zeros(self.n_estimators)
@@ -46,6 +47,7 @@ class AdaBoostClassifier(object):
         return self
 
     def predict(self, X):
+        """Predict classes for X."""
         pred = np.zeros(X.shape[0])
         for i in range(self.n_estimators):
             pred += self.alpha[i] * (2 * self.estimators_[i].predict(X) - 1)
@@ -54,6 +56,7 @@ class AdaBoostClassifier(object):
         return pred
 
     def predict_proba(self, X):
+        """Predict class probabilities for X."""
         prob_mat = np.zeros((X.shape[0], self.estimators_[0].n_classes_))
         for i in range(self.n_estimators):
             prob_mat += self.alpha[i] * self.estimators_[i].predict_proba(X)

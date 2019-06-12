@@ -3,8 +3,8 @@ from sklearn.tree import DecisionTreeClassifier
 
 
 def sample(X, y, distrib):
-    nsample = len(distrib)
-    index = np.random.choice(nsample, nsample, p=distrib)
+    n_sample = len(distrib)
+    index = np.random.choice(n_sample, n_sample, p=distrib)
     return X[index], y[index]
 
 
@@ -32,8 +32,8 @@ class AdaBoostClassifier(object):
         self.estimators_ = [DecisionTreeClassifier(max_depth=1)
                             for i in range(self.n_estimators)]
         self.alpha = np.zeros(self.n_estimators)
-        nsample = X.shape[0]
-        distrib = np.ones(nsample) / nsample
+        n_sample = X.shape[0]
+        distrib = np.ones(n_sample) / n_sample
 
         for i in range(self.n_estimators):
             err = 1.0

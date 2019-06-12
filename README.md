@@ -7,8 +7,8 @@ Here are some algorithms that implemented:
 ```
 mlfs --- linear_model --- LogisticRegression
       |
-      |- ensemble --- AdaBoostClassifer
-      |            `- RandomForestClassifer
+      |- ensemble --- AdaBoostClassifier
+      |            `- RandomForestClassifier
       |
       |- cluster --- KMeans
       |           |- DBSCAN

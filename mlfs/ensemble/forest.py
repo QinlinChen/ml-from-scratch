@@ -3,8 +3,8 @@ from sklearn.tree import DecisionTreeClassifier
 
 
 def bootstrap(X, y):
-    nsample = X.shape[0]
-    index = np.random.randint(0, nsample, nsample)
+    n_sample = X.shape[0]
+    index = np.random.randint(0, n_sample, n_sample)
     return X[index], y[index]
 
 

@@ -1,11 +1,13 @@
 This is my implementations of machine learning algorithms.
 
-Its hierarchy is similar to the scikit-learn.
+Its hierarchy is similar to the one of the scikit-learn.
 
-Here are some algorithms that implemented:
+Here are some algorithms that have been implemented:
 
 ```
 mlfs --- linear_model --- LogisticRegression
+      |
+      |- tree --- DecisionTreeClassifier
       |
       |- ensemble --- AdaBoostClassifier
       |            `- RandomForestClassifier
